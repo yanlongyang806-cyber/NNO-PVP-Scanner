@@ -14,8 +14,8 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v2
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.1
 
-    - name: Build solution
+    - name: Build scanner.sln
       run: msbuild scanner.sln /p:Configuration=Release /p:Platform=Win32 /m
