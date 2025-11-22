@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -12,9 +13,10 @@
   </ItemGroup>
 
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F1A91B1A-1234-4B5A-A5AB-8A1EF2DAB111}</ProjectGuid>
+    <ProjectGuid>{B11C8F77-1ECA-4A14-8C40-22D9AE12F1A1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>scanner</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
 
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -40,5 +42,10 @@
     <ClCompile Include="scanner.cpp" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="scanner.cpp" />
+  </ItemGroup>
+
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+
 </Project>
