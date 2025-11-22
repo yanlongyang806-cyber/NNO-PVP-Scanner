@@ -3,19 +3,23 @@ name: Build Scanner
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v1.1
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1.3
 
-    - name: Build scanner.sln
-      run: msbuild scanner.sln /p:Configuration=Release /p:Platform=Win32 /m
+      - name: Build scanner
+        run: msbuild scanner.sln /p:Configuration=Release /p:Platform=Win32
+
+      - name: Upload scanner.exe
+        uses: actions/upload-artifact@v4
+        with:
+          name: scanner-build
+          path: Release/scanner.exe
